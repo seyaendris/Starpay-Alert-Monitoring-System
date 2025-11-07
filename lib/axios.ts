@@ -1,38 +1,41 @@
-import axios, { AxiosError } from "axios"
-import { API_BASE_URL } from "./config"
-import { useAuthStore } from "@/store/authStore"
+import axios, {
+  AxiosHeaders,
+  InternalAxiosRequestConfig,
+} from 'axios';
+import { API_BASE_URL } from './config';
+import { useAuthStore } from '@/store/authStore';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
   headers: {
-    Accept: "application/json",
-    "Content-Type": "application/json",
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
   },
   timeout: 8000,
-})
+});
 
-axios.interceptors.request.use(
-  (config) => {
-    const token = useAuthStore.getState().token
+api.interceptors.request.use(
+  (config: InternalAxiosRequestConfig) => {
+    const token = useAuthStore.getState().token;
     if (token) {
-      config.headers = config.headers ?? {}
-      config.headers.Authorization = `Bearer ${token}`
+      const headers = new AxiosHeaders(config.headers);
+      headers.set('Authorization', `Bearer ${token}`);
+      config.headers = headers;
     }
-    return config
+    return config;
   },
-  (error) => Promise.reject(error)
-)
+  (error: unknown) => Promise.reject(error)
+);
 
 api.interceptors.response.use(
   (response) => response,
-  (error: AxiosError) => {
-    const { logout } = useAuthStore.getState()
-    if (error.response?.status === 401) {
-      // optionally: toast, redirect to /login, etc.
-      logout()
+  (error: unknown) => {
+    const { logout } = useAuthStore.getState();
+    if (axios.isAxiosError(error) && error.response?.status === 401) {
+      logout();
     }
-    return Promise.reject(error)
+    return Promise.reject(error);
   }
-)
+);
 
-export default api
+export default api;

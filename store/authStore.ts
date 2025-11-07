@@ -51,7 +51,6 @@ export const useAuthStore = create<AuthState>()(
         username: s.username,
         isAuthenticated: s.isAuthenticated,
       }),
-      skipHydration: true,
       version: 1,
     }
   )
