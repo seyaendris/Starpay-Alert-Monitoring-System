@@ -1,16 +1,5 @@
 import { LoginForm } from '@/components/auth/LoginForm';
-import { Metadata } from 'next';
 import Image from 'next/image';
-
-export const metadata: Metadata = {
-  title: 'Login | Road Rover',
-  description:
-    'Sign in to your Road Rover account to manage your fleet and track vehicles.',
-  robots: {
-    index: false,
-    follow: false,
-  },
-};
 
 export default function LoginPage() {
   return (
