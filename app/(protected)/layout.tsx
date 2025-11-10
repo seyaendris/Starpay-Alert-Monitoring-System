@@ -11,7 +11,6 @@ export default function DashboardLayout({
   return (
     <div className='flex min-h-screen'>
       <Sidebar />
-
       <div className='flex-1'>
         <header className='sticky top-0 z-100 bg-background/80 backdrop-blur border-b py-2'>
           <div className='flex h-14 items-center gap-2 px-3'>
