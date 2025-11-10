@@ -2,14 +2,14 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { BarChart, Users, Settings, LayoutDashboard } from 'lucide-react';
+import { Users, UserRoundCog, TriangleAlert, BookAlert } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export const nav = [
-  { href: '/', label: 'Overview', icon: LayoutDashboard },
-  { href: '/analytics', label: 'Analytics', icon: BarChart },
-  { href: '/users', label: 'Users', icon: Users },
-  { href: '/settings', label: 'Settings', icon: Settings },
+  { href: '/', label: 'Alerts', icon: TriangleAlert },
+  { href: '/analytics', label: 'Alert History', icon: BookAlert },
+  { href: '/users', label: 'Users Account', icon: UserRoundCog },
+  { href: '/receivers', label: 'Alert Receivers', icon: Users },
 ];
 
 export function SidebarNav({ onNavigate }: { onNavigate?: () => void }) {
