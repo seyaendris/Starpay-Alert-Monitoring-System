@@ -53,12 +53,12 @@ export function UserMenu({ imageUrl, onLogout }: UserMenuProps) {
       <DropdownMenuTrigger asChild className="mr-3">
         <Button
           variant="ghost"
-          className="relative h-12 w-12 rounded-full p-3 cursor-pointer"
+          className="relative h-10 w-10 rounded-full p-2 cursor-pointer"
           aria-label="Open user menu"
         >
-          <Avatar className="h-12 w-12 bg-green-500">
+          <Avatar className="h-10 w-10 bg-green-500 border-3 border-green-600">
             <AvatarImage src={imageUrl ?? undefined} alt={name} />
-            <AvatarFallback className="font-bold">{fallback}</AvatarFallback>
+            <AvatarFallback className="font-bold text-green-700 text-lg">{fallback}</AvatarFallback>
           </Avatar>
         </Button>
       </DropdownMenuTrigger>
@@ -66,7 +66,7 @@ export function UserMenu({ imageUrl, onLogout }: UserMenuProps) {
       <DropdownMenuContent
         align="end"
         sideOffset={8}
-        className="w-64 z-1000 mr-10"
+        className="w-64 z-1000 mr-3"
       >
         <DropdownMenuLabel className="flex flex-col lg:flex-row items-center justify-between gap-1">
           <span className="text-lg font-semibold leading-none">{name}</span>
