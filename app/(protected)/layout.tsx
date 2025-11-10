@@ -13,7 +13,7 @@ export default function DashboardLayout({
       <Sidebar />
 
       <div className='flex-1'>
-        <header className='sticky top-0 z-100 bg-background/80 backdrop-blur border-b py-0.5'>
+        <header className='sticky top-0 z-100 bg-background/80 backdrop-blur border-b py-2'>
           <div className='flex h-14 items-center gap-2 px-3'>
             <MobileSidebar />
             <div className='ml-auto'>
