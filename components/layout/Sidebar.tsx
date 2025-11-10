@@ -14,7 +14,7 @@ export function Sidebar() {
           className=""
           />
       </div>
-      <Separator className="bg-gray-100" />
+      <Separator className="bg-gray-50" />
       <div className="flex-1 overflow-auto pt-7">
         <SidebarNav />
       </div>
