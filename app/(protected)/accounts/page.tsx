@@ -1,9 +1,10 @@
-import React from 'react'
+import { AccountsTable } from "@/components/accounts/AccountsTable";
 
-const UserAccounts = () => {
+export default function AccountsPage() {
   return (
-    <div>UserAccounts</div>
-  )
+    <div className="space-y-4">
+      <h1 className="text-2xl font-bold">Accounts</h1>
+      <AccountsTable />
+    </div>
+  );
 }
-
-export default UserAccounts

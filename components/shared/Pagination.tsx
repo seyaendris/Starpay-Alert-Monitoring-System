@@ -86,7 +86,7 @@ export function TablePagination({
             <PaginationPrevious
               href="#"
               aria-disabled={!canGoPrev || isLoading}
-              className={`${!canGoPrev || isLoading ? "pointer-events-none opacity-50" : ""} ${page === 1 ? "bg-green-600 text-white hover:bg-green-600/80 hover:text-white" : ""}`}
+              className={`bg-green-100 hover:bg-green-100/70 ${!canGoPrev || isLoading ? "pointer-events-none opacity-50" : ""} ${page === 1 ? "bg-green-600 text-white hover:bg-green-600/80 hover:text-white" : ""}`}
               onClick={(e) => {
                 e.preventDefault();
                 if (!canGoPrev || isLoading) return;
@@ -111,7 +111,7 @@ export function TablePagination({
                     if (isLoading) return;
                     handleChange(p);
                   }}
-                  className={`rounded-full ${p === page ? "bg-green-600 text-white hover:bg-green-600/80 hover:text-white" : ""}`}
+                  className={`rounded-full bg-green-100 hover:bg-green-100/70 ${p === page ? "bg-green-600 text-white hover:bg-green-600/80 hover:text-white" : ""}`}
                 >
                   {p}
                 </PaginationLink>
@@ -123,7 +123,7 @@ export function TablePagination({
             <PaginationNext
               href="#"
               aria-disabled={!canGoNext || isLoading}
-               className={` ${!canGoNext || isLoading ? "pointer-events-none opacity-50" : ""} ${page === totalPages ? "bg-green-600 text-white hover:bg-green-600/80 hover:text-white" : ""}`}
+               className={`bg-green-100 hover:bg-green-100/70 ${!canGoNext || isLoading ? "pointer-events-none opacity-50" : ""} ${page === totalPages ? "bg-green-600 text-white hover:bg-green-600/80 hover:text-white" : ""}`}
               onClick={(e) => {
                 e.preventDefault();
                 if (!canGoNext || isLoading) return;
