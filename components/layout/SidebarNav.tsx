@@ -7,8 +7,8 @@ import { cn } from '@/lib/utils';
 
 export const nav = [
   { href: '/', label: 'Alerts', icon: TriangleAlert },
-  { href: '/analytics', label: 'Alert History', icon: BookAlert },
-  { href: '/users', label: 'Users Account', icon: UserRoundCog },
+  { href: '/alert_history', label: 'Alert History', icon: BookAlert },
+  { href: '/accounts', label: 'Users Account', icon: UserRoundCog },
   { href: '/receivers', label: 'Alert Receivers', icon: Users },
 ];
 
