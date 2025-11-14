@@ -1,7 +1,4 @@
-import axios, {
-  AxiosHeaders,
-  InternalAxiosRequestConfig,
-} from 'axios';
+import axios, { AxiosHeaders, InternalAxiosRequestConfig } from 'axios';
 import { API_BASE_URL } from './config';
 import { useAuthStore } from '@/store/authStore';
 
@@ -10,7 +7,9 @@ const api = axios.create({
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
+    // 'bypass-tunnel-reminder': 'true',
   },
+
   timeout: 8000,
 });
 
